@@ -2,15 +2,20 @@ import 'dart:math';
 import 'dart:io';
 
 int max = 10;
+
 void main() {
   int rand = randomNum();
-  List<int> list = [1, 4, 5, 9, rand];
+  int num;
   int ind = 0;
+
   do {
-    Map<String, bool> res = compareRes(list[ind], rand);
+    print("enter your number guess: ");
+    num = int.parse(stdin.readLineSync()!);
+    Map<String, bool> res = compareRes(num, rand);
     ind++;
     print(res);
-  } while (rand != list[ind - 1]);
+  } while (rand != num);
+  
 }
 
 Map<String, bool> compareRes(int User_num, int num_of_play) {
